@@ -13,9 +13,7 @@ block market_view
             tr
               th #{settings.locale.mkt_high}
               th #{settings.locale.mkt_low}
-              th #{settings.locale.mkt_volume} (#{marketdata.coin})
-              th.hidden-xs #{settings.locale.mkt_top_bid}
-              th.hidden-xs #{settings.locale.mkt_top_ask}
+              th #{settings.locale.mkt_volume} (#{marketdata.exchange})
               th.hidden-xs #{settings.locale.mkt_last}
               th #{settings.locale.mkt_change}
           tbody
@@ -23,8 +21,6 @@ block market_view
               td #{marketdata.data.summary.high}
               td #{marketdata.data.summary.low}
               td #{marketdata.data.summary.volume}
-              td.hidden-xs #{marketdata.data.summary.bid}
-              td.hidden-xs #{marketdata.data.summary.ask}
               td.hidden-xs #{marketdata.data.summary.last}
               - var safecrex_change = (marketdata.data.summary.change);
               if safecrex_change >= 0
